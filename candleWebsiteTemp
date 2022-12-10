@@ -1,0 +1,42 @@
+/*
+Program that implements both java and javaScript
+to create a simple website template for a startup 
+candle selling company
+*/
+
+// Java code to define the product information
+public class Product {
+  private String name;
+  private String description;
+  private String price;
+
+  public Product(String name, String description, String price) {
+    this.name = name;
+    this.description = description;
+    this.price = price;
+  }
+
+  public String getName() { return name; }
+  public String getDescription() { return description; }
+  public String getPrice() { return price; }
+}
+
+// JavaScript code to create the website template and insert the product information
+const companyName = "Scented Dreams";
+const companySlogan = "Light up your life with our handcrafted candles";
+
+const products = [
+  new Product("Lavender Dreams", "A calming blend of lavender and vanilla", "$12.99"),
+  new Product("Citrus Delight", "A refreshing blend of lemon and grapefruit", "$10.99"),
+  new Product("Cinnamon Spice", "A warm and cozy blend of cinnamon and clove", "$14.99")
+];
+
+document.getElementById("company-name").innerHTML = companyName;
+document.getElementById("company-slogan").innerHTML = companySlogan;
+
+for (let i = 0; i < products.length; i++) {
+  const product = products[i];
+  document.getElementById(`product-${i+1}`).innerHTML = product.getName();
+  document.getElementById(`product-${i+1}-description`).innerHTML = product.getDescription();
+  document.getElementById(`product-${i+1}-price`).innerHTML = product.getPrice();
+}
